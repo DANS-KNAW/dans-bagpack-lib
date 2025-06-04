@@ -1,0 +1,7 @@
+/target/
+/*.iml
+/.idea
+/pom.xml.releaseBackup
+/release.properties
+/venv
+/.venv-mkdocs
