@@ -159,9 +159,16 @@ public class OaiOreConverter {
         model.add(model.createStatement(resource, RDF.type, ORE.AggregatedResource));
         model.add(model.createStatement(resource, SchemaDO.name, payloadFile.getPath().toString()));
         model.add(DataFile.toRDF(resource, payloadFile));
-
         return resource;
     }
+
+//    Resource createAggregatedResource(Model model, PayloadFile payloadFile) {
+//        var resource = model.createResource("urn:uuid:" + payloadFile.getId())
+//            .addProperty(RDF.type, ORE.AggregatedResource)
+//            .addProperty(SchemaDO.name, payloadFile.getPath().toString());
+//        model.add(DataFile.toRDF(resource, payloadFile));
+//        return resource;
+//    }
 
     Resource createAggregation(Deposit deposit, Model model) {
         var resource = model.createResource(deposit.getNbn());
@@ -183,4 +190,19 @@ public class OaiOreConverter {
 
         return resource;
     }
+
+
+//    Resource createAggregation(Deposit deposit, Model model) {
+//        var resource = model.createResource(deposit.getNbn())
+//            .addProperty(RDF.type, ORE.Aggregation);
+//
+//        if (deposit.getPayloadFiles() != null) {
+//            for (var file : deposit.getPayloadFiles()) {
+//                var fileResource = createAggregatedResource(model, file);
+//                resource.addProperty(ORE.aggregates, fileResource);
+//            }
+//        }
+//
+//        return resource;
+//    }
 }

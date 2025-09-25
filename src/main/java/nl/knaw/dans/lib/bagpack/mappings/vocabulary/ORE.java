@@ -24,6 +24,7 @@ public class ORE {
     public static final String NS = "http://www.openarchives.org/ore/terms/";
     private static final Model m = ModelFactory.createDefaultModel();
     public static final Property describes = m.createProperty(NS, "describes");
+    public static final Property isDescribedBy = m.createProperty(NS, "isDescribedBy");
     public static final Resource AggregatedResource = m.createProperty(NS, "AggregatedResource");
     public static final Resource Aggregation = m.createProperty(NS, "Aggregation");
     public static final Resource ResourceMap = m.createProperty(NS, "ResourceMap");
